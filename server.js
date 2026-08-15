@@ -84,6 +84,10 @@ app.get('/api/destinations', verifyToken, async (req, res) => {
   }
 });
 
+app.get('/', (req, res) => {
+  res.json({ status: 'OK', message: 'API Travel Guide Berjalan Normal' });
+});
+
 // 5. Jalankan Server
 
 const PORT = process.env.PORT || 5000;
