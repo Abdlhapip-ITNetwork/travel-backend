@@ -85,5 +85,10 @@ app.get('/api/destinations', verifyToken, async (req, res) => {
 });
 
 // 5. Jalankan Server
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server berjalan di port ${PORT}`));
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => console.log(`🚀 Server berjalan di port ${PORT}`));
+}
+
+module.exports = app; // Wajib untuk Vercel Serverless
